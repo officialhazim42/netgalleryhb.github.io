@@ -920,18 +920,29 @@ body.light-mode .contact-item p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md);
   background: rgba(14, 165, 233, 0.1);
   color: var(--primary);
   text-decoration: none;
   transition: var(--transition);
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  position: relative;
 }
 
 .social-links a:hover {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.4);
+  border-color: var(--primary);
+}
+
+.social-links a:active {
+  transform: translateY(-2px);
 }
 
 .contact-map {
@@ -1495,6 +1506,17 @@ body.light-mode .footer-bottom {
 }
 
 /* Make text links inside footer also look like buttons */
+.footer .social-links.footer-social a {
+  width: 48px;
+  height: 48px;
+  font-size: 1.8rem;
+  background: rgba(14, 165, 233, 0.15);
+}
+
+.footer .social-links.footer-social a:hover {
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.5);
+}
+
 .footer .social-links a {
   min-width: 40px;
 }
