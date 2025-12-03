@@ -533,7 +533,12 @@ function generateUpiQR(amount = 0){
 function openUpiModal(){
   if(!upiModal) return;
   upiModal.classList.remove('hidden');
-  if(upiQR) upiQR.src = generateUpiQR(0);
+  if(upiQR){
+    // Prefer user-provided UPI QR image if present, otherwise generate a QR
+    const localUpiPath = 'assets/upi_qr.png';
+    upiQR.onerror = () => { upiQR.src = generateUpiQR(0); };
+    upiQR.src = localUpiPath;
+  }
   if(upiDeepLink) upiDeepLink.href = `upi://pay?pa=${UPI_ID}&pn=NetGalleryHb&cu=INR`;
 }
 
