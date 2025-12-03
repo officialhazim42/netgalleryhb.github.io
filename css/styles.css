@@ -914,6 +914,65 @@ body.light-mode .contact-item p {
   justify-content: center;
   gap: var(--spacing-md);
   margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.social-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon-link svg {
+  width: 24px;
+  height: 24px;
+  transition: var(--transition);
+}
+
+.social-icon-link:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.4);
+  border-color: var(--primary);
+}
+
+.social-icon-link:active {
+  transform: translateY(-2px);
+}
+
+.social-label {
+  font-size: 0.75rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon-link:hover ~ .social-label,
+.social-icon-wrapper:hover .social-label {
+  opacity: 1;
+  color: var(--primary);
 }
 
 .social-links a {
@@ -1300,6 +1359,38 @@ body.light-mode .footer-bottom {
    ============================================ */
 
 @media (max-width: 768px) {
+  .social-links {
+    gap: var(--spacing-sm);
+  }
+
+  .social-icon-wrapper {
+    gap: 4px;
+  }
+
+  .social-icon-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icon-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-label {
+    font-size: 0.65rem;
+  }
+
+  .footer .social-links.footer-social .social-icon-link {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer .social-links.footer-social .social-icon-link svg {
+    width: 24px;
+    height: 24px;
+  }
+}
   .navbar-container {
     flex-wrap: wrap;
   }
@@ -1387,15 +1478,43 @@ body.light-mode .footer-bottom {
     right: var(--spacing-md);
     bottom: var(--spacing-md);
   }
+
+  .social-links {
+    gap: var(--spacing-sm);
+  }
+
+  .social-icon-wrapper {
+    gap: 4px;
+  }
+
+  .social-icon-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icon-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-label {
+    font-size: 0.65rem;
+  }
+
+  .footer .social-links.footer-social .social-icon-link {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer .social-links.footer-social .social-icon-link svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--spacing-sm);
-  }
-
-  .navbar-brand {
-    flex-basis: 100%;
   }
 
   .navbar-actions {
@@ -1506,15 +1625,30 @@ body.light-mode .footer-bottom {
 }
 
 /* Make text links inside footer also look like buttons */
-.footer .social-links.footer-social a {
-  width: 48px;
-  height: 48px;
+.footer .social-links.footer-social {
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+}
+
+.footer .social-links.footer-social .social-icon-link {
+  width: 54px;
+  height: 54px;
   font-size: 1.8rem;
   background: rgba(14, 165, 233, 0.15);
 }
 
-.footer .social-links.footer-social a:hover {
+.footer .social-links.footer-social .social-icon-link svg {
+  width: 28px;
+  height: 28px;
+}
+
+.footer .social-links.footer-social .social-icon-link:hover {
   box-shadow: 0 12px 24px rgba(14, 165, 233, 0.5);
+}
+
+.footer .social-links.footer-social .social-label {
+  color: var(--text-light-muted);
+  font-size: 0.7rem;
 }
 
 .footer .social-links a {
