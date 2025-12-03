@@ -75,86 +75,160 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================
-// LANGUAGE SUPPORT
+// LANGUAGE SUPPORT (full-site)
 // ============================================
 
 const translations = {
   en: {
-    'home.title': 'Your Trusted Digital & Printing Partner',
-    'services.csc': 'CSC / eKYC',
-    'services.print': 'Printing Services',
-    'services.covers': 'Custom Phone Covers',
-    'services.frames': 'Photo Frames',
-    'services.digital': 'Digital Help',
-    'services.id': 'ID Photos',
-    'nav.home': 'Home',
-    'nav.services': 'Services',
-    'nav.gallery': 'Gallery',
-    'nav.booking': 'Booking',
-    'nav.contact': 'Contact',
+    'nav.home':'Home','nav.services':'Services','nav.gallery':'Gallery','nav.booking':'Booking','nav.contact':'Contact',
+    'home.title':'Your Trusted Digital & Printing Partner','home.desc':'Professional CSC services, custom phone covers, photo frames, and comprehensive digital solutions in Ganderbal.',
+    'cta.book':'Book Now','cta.learn':'Learn More',
+    'about.title':'About Net Gallery Hb','about.desc':'We are a trusted service center providing comprehensive digital and printing solutions in Sahipora, Ganderbal.',
+    'counters.customers':'Happy Customers','counters.orders':'Orders Completed','counters.services':'Services Delivered',
+    'services.title':'Our Services','services.subtitle':'Complete digital and printing solutions tailored to your needs',
+    'services.csc':'CSC / eKYC','services.csc.desc':'Government documentation, Aadhaar updates, certificates, and online form submissions.',
+    'services.print':'Printing Services','services.print.desc':'High-quality color and B&W printing, photocopying, lamination, and scanning.',
+    'services.covers':'Custom Phone Covers','services.covers.desc':'Personalized premium-quality phone covers for all models with vibrant printing.',
+    'services.frames':'Photo Frames','services.frames.desc':'Customizable photo frames, gift frames, and decorative wall art.',
+    'services.digital':'Digital Help','services.digital.desc':'Online registrations, form filling, tech support, and digital assistance.',
+    'services.id':'ID Photos','services.id.desc':'Instant passport-size photos with professional editing and printing.',
+    'pricing.title':'Pricing','pricing.subtitle':'Transparent and competitive pricing','pricing.cover':'Custom Phone Cover','pricing.frame':'Photo Frame (Small)','pricing.print':'Document Printing (A4)','pricing.passport':'Passport Photos (4 pcs)',
+    'booking.title':'Book Our Services','booking.subtitle':'Request a booking and we\'ll contact you shortly','booking.name.label':'Full Name *','booking.name.placeholder':'Your full name','booking.phone.label':'Phone Number *','booking.phone.placeholder':'Your phone number','booking.service.label':'Service Required *','booking.service.select':'Select a service','booking.notes.label':'Additional Notes','booking.notes.placeholder':'Tell us more about your requirements','booking.submit':'Submit Booking Request',
+    'reviews.title':'Customer Reviews','reviews.subtitle':'What our customers say about us',
+    'review.1.text':'"Great service and fast printing. Highly recommended. Will definitely come back."','review.1.author':'Ali Ahmed','review.1.tag':'Verified Customer',
+    'review.2.text':'"Helpful staff and excellent photo quality. The custom phone cover is amazing!"','review.2.author':'Fatima Khan','review.2.tag':'Verified Customer',
+    'review.3.text':'"Good prices and friendly service. Best printing shop in Ganderbal. Will come again."','review.3.author':'Rohit Sharma','review.3.tag':'Verified Customer',
+    'contact.title':'Get In Touch','contact.subtitle':'Multiple ways to reach us','contact.phone.title':'📞 Phone','contact.phone.value':'+91 80824 22129','contact.whatsapp.title':'💬 WhatsApp','contact.whatsapp.link':'Chat with us','contact.channel.title':'📧 Channel','contact.channel.link':'Join Channel','contact.online.title':'🌐 Online',
+    'social.instagram':'Instagram','social.youtube':'YouTube','social.facebook':'Facebook',
+    'cta.copy':'Copy','upi.title':'Pay via UPI','upi.desc':'Pay securely using UPI. Scan the QR or copy the UPI ID.','upi.note':'Tip: After payment, send a screenshot to our WhatsApp for confirmation.'
   },
   hi: {
-    'home.title': 'आपका विश्वसनीय डिजिटल और प्रिंटिंग पार्टनर',
-    'services.csc': 'CSC / eKYC',
-    'services.print': 'प्रिंटिंग सेवाएँ',
-    'services.covers': 'कस्टम फोन कवर',
-    'services.frames': 'फोटो फ्रेम',
-    'services.digital': 'डिजिटल मदद',
-    'services.id': 'आईडी फोटो',
-    'nav.home': 'होम',
-    'nav.services': 'सेवाएँ',
-    'nav.gallery': 'गैलरी',
-    'nav.booking': 'बुकिंग',
-    'nav.contact': 'संपर्क',
+    'nav.home':'होम','nav.services':'सेवाएँ','nav.gallery':'गैलरी','nav.booking':'बुकिंग','nav.contact':'संपर्क',
+    'home.title':'आपका विश्वसनीय डिजिटल और प्रिंटिंग पार्टनर','home.desc':'हम सीएससी सेवाएँ, कस्टम फोन कवर, फोटो फ्रेम और संपूर्ण डिजिटल समाधान प्रदान करते हैं।',
+    'cta.book':'बुक करें','cta.learn':'और जानें',
+    'about.title':'Net Gallery Hb के बारे में','about.desc':'हम साहिपोरा, गंडरबल में व्यापक डिजिटल और प्रिंटिंग समाधान प्रदान करते हैं।',
+    'counters.customers':'संतुष्ट ग्राहक','counters.orders':'पूरा किए गए ऑर्डर','counters.services':'प्रदान की गई सेवाएँ',
+    'services.title':'हमारी सेवाएँ','services.subtitle':'आपकी आवश्यकताओं के अनुरूप डिजिटल और प्रिंटिंग समाधान',
+    'services.csc':'CSC / eKYC','services.csc.desc':'सरकारी दस्तावेज़ीकरण, आधार अपडेट, प्रमाणपत्र और ऑनलाइन फॉर्म सब्मिशन।',
+    'services.print':'प्रिंटिंग सेवाएँ','services.print.desc':'उच्च गुणवत्ता रंग व ब्लैक/व्हाइट प्रिंटिंग, फ़ोटो कॉपी, लैमिनेशन और स्कैनिंग।',
+    'services.covers':'कस्टम फोन कवर','services.covers.desc':'सभी मॉडलों के लिए व्यक्तिगत प्रीमियम फोन कवर।',
+    'services.frames':'फोटो फ्रेम','services.frames.desc':'कस्टमाइज़ेबल फोटो फ्रेम और उपहार।',
+    'services.digital':'डिजिटल मदद','services.digital.desc':'ऑनलाइन पंजीकरण, फ़ॉर्म भरना और तकनीकी सहायता।',
+    'services.id':'आईडी फ़ोटो','services.id.desc':'प्रोफेशनल एडिटिंग के साथ त्वरित पासपोर्ट साइज फ़ोटो।',
+    'pricing.title':'मूल्य','pricing.subtitle':'पारदर्शी और प्रतिस्पर्धी मूल्य',
+    'pricing.cover':'कस्टम कवर','pricing.frame':'फोटो फ़्रेम (छोटा)','pricing.print':'दस्तावेज़ प्रिंट (A4)','pricing.passport':'पासपोर्ट फ़ोटो (4 पीस)',
+    'booking.title':'ऑनलाइन बुकिंग','booking.subtitle':'बुकिंग का अनुरोध करें, हम आपसे संपर्क करेंगे','booking.name.label':'पूरा नाम *','booking.name.placeholder':'अपना पूरा नाम','booking.phone.label':'फोन नंबर *','booking.phone.placeholder':'आपका फोन नंबर','booking.service.label':'सेवा आवश्यक *','booking.service.select':'सेवा चुनें','booking.notes.label':'अतिरिक्त नोट्स','booking.notes.placeholder':'अपनी आवश्यकताओं के बारे में बताएं','booking.submit':'बुकिंग भेजें',
+    'reviews.title':'ग्राहक समीक्षाएँ','reviews.subtitle':'हमारे ग्राहक क्या कहते हैं',
+    'review.1.text':'"बेहतरीन सेवा और तेज़ प्रिंटिंग। अत्यधिक अनुशंसित।"','review.1.author':'अली अहमद','review.1.tag':'सत्यापित ग्राहक',
+    'review.2.text':'"सहायक स्टाफ और उत्कृष्ट फोटो गुणवत्ता।"','review.2.author':'फातिमा खान','review.2.tag':'सत्यापित ग्राहक',
+    'review.3.text':'"अच्छी कीमतें और दोस्ताना सेवा।"','review.3.author':'रोहित शर्मा','review.3.tag':'सत्यापित ग्राहक',
+    'contact.title':'संपर्क करें','contact.subtitle':'हमसे संपर्क करने के कई तरीके','contact.phone.title':'📞 फोन','contact.phone.value':'+91 80824 22129','contact.whatsapp.title':'💬 व्हाट्सएप','contact.whatsapp.link':'हमसे चैट करें','contact.channel.title':'📧 चैनल','contact.channel.link':'चैनल में जुड़ें','contact.online.title':'🌐 ऑनलाइन',
+    'social.instagram':'इंस्टाग्राम','social.youtube':'यूट्यूब','social.facebook':'फेसबुक',
+    'cta.copy':'कॉपी','upi.title':'UPI द्वारा भुगतान','upi.desc':'UPI का उपयोग करके सुरक्षित रूप से भुगतान करें। QR स्कैन करें या UPI ID कॉपी करें।','upi.note':'भुगतान के बाद पुष्टिकरण के लिए स्क्रीनशॉट व्हाट्सएप पर भेजें।'
   },
   ur: {
-    'home.title': 'آپ کا قابلِ اعتماد ڈیجیٹل اور پرنٹنگ پارٹنر',
-    'services.csc': 'CSC / eKYC',
-    'services.print': 'پرنٹنگ سروسز',
-    'services.covers': 'کسٹم فون کورز',
-    'services.frames': 'فوٹو فریمز',
-    'services.digital': 'ڈیجیٹل مدد',
-    'services.id': 'آئی ڈی فوٹوز',
-    'nav.home': 'ہوم',
-    'nav.services': 'سروسز',
-    'nav.gallery': 'گیلری',
-    'nav.booking': 'بکنگ',
-    'nav.contact': 'رابطہ',
+    'nav.home':'ہوم','nav.services':'خدمات','nav.gallery':'گیلری','nav.booking':'بکنگ','nav.contact':'رابطہ',
+    'home.title':'آپ کا معتبر ڈیجیٹل اور پرنٹنگ پارٹنر','home.desc':'پیشہ ورانہ CSC خدمات، کسٹم فون کورز، فوٹو فریمز اور مکمل ڈیجیٹل حل۔',
+    'cta.book':'اب بُک کریں','cta.learn':'مزید جانیں',
+    'about.title':'Net Gallery Hb کے بارے میں','about.desc':'ہم سہپورا، گنڈر بل میں جامع ڈیجیٹل اور پرنٹنگ سروسز فراہم کرتے ہیں۔',
+    'counters.customers':'خوش گاہک','counters.orders':'مکمل آرڈرز','counters.services':'فراہم کردہ خدمات',
+    'services.title':'ہماری خدمات','services.subtitle':'آپ کی ضروریات کے مطابق مکمل ڈیجیٹل اور پرنٹنگ حل',
+    'services.csc':'CSC / eKYC','services.csc.desc':'سرکاری دستاویزات، آدھار اپڈیٹس، اور آن لائن فارم۔',
+    'services.print':'پرنٹنگ سروسز','services.print.desc':'اعلی معیار رنگ و بلیک/وائٹ پرنٹنگ، فوٹو کاپی، لیمنیشن اور اسکیننگ۔',
+    'services.covers':'کسٹم فون کورز','services.covers.desc':'تمام ماڈلز کیلئے ذاتی نوعیت کے پریمیم فون کورز۔',
+    'services.frames':'فوٹو فریم','services.frames.desc':'کستومائز ایبل فوٹو فریم اور تحائف۔',
+    'services.digital':'ڈیجیٹل مدد','services.digital.desc':'آن لائن رجسٹریشن، فارم بھرنا اور تکنیکی مدد۔',
+    'services.id':'آئی ڈی فوٹوز','services.id.desc':'پاسپورٹ سائز فوٹوز فوری پرنٹ کے ساتھ۔',
+    'pricing.title':'قیمت','pricing.subtitle':'شفاف اور مسابقتی قیمتیں','pricing.cover':'کسٹم کور','pricing.frame':'فوٹو فریم (چھوٹا)','pricing.print':'دستاویز پرنٹ (A4)','pricing.passport':'پاسپورٹ فوٹوز (4 پیس)',
+    'booking.title':'آن لائن بکنگ','booking.subtitle':'بکنگ کی درخواست کریں، ہم آپ سے رابطہ کریں گے','booking.name.label':'پورا نام *','booking.name.placeholder':'اپنا پورا نام','booking.phone.label':'فون نمبر *','booking.phone.placeholder':'آپ کا فون نمبر','booking.service.label':'درکار سروس *','booking.service.select':'سروس منتخب کریں','booking.notes.label':'اضافی نوٹس','booking.notes.placeholder':'اپنی ضروریات بتائیں','booking.submit':'بکنگ درخواست بھیجیں',
+    'reviews.title':'کسٹمر جائزے','reviews.subtitle':'ہمارے کسٹمرز کیا کہتے ہیں',
+    'review.1.text':'"بہترین سروس اور تیز پرنٹنگ۔"','review.1.author':'علی احمد','review.1.tag':'تصدیق شدہ کسٹمر',
+    'review.2.text':'"مددگار عملہ اور بہترین تصویر معیار۔"','review.2.author':'فاطمہ خان','review.2.tag':'تصدیق شدہ کسٹمر',
+    'review.3.text':'"اچھی قیمتیں اور دوستانہ سروس۔"','review.3.author':'روہت شرما','review.3.tag':'تصدیق شدہ کسٹمر',
+    'contact.title':'رابطہ کریں','contact.subtitle':'ہم سے رابطہ کرنے کے کئی طریقے','contact.phone.title':'📞 فون','contact.phone.value':'+91 80824 22129','contact.whatsapp.title':'💬 واٹس ایپ','contact.whatsapp.link':'ہم سے چیٹ کریں','contact.channel.title':'📧 چینل','contact.channel.link':'چینل میں شامل ہوں','contact.online.title':'🌐 آن لائن',
+    'social.instagram':'انسٹاگرام','social.youtube':'یوٹیوب','social.facebook':'فیس بُک',
+    'cta.copy':'کاپی','upi.title':'UPI کے ذریعے ادائیگی','upi.desc':'UPI کے ذریعے محفوظ طریقے سے ادائیگی کریں۔ QR اسکین کریں یا UPI ID کاپی کریں۔','upi.note':'ادائیگی کے بعد تصدیق کیلئے سکرین شاٹ واٹس ایپ پر بھیجیں۔'
   },
   ks: {
-    'home.title': 'تہہ آس سندریہ ڈیجیٹل اینڈ پرنٹنگ',
-    'services.csc': 'CSC / eKYC',
-    'services.print': 'پرنٹنگ سروسِز',
-    'services.covers': 'کسٹم فون کورز',
-    'services.frames': 'فوٹو فریمز',
-    'services.digital': 'ڈیجیٹل مدد',
-    'services.id': 'آئی ڈی فوٹوز',
-    'nav.home': 'ہوم',
-    'nav.services': 'سروسز',
-    'nav.gallery': 'گیلری',
-    'nav.booking': 'بکنگ',
-    'nav.contact': 'رابطہ',
+    'nav.home':'ہوم','nav.services':'سروسز','nav.gallery':'گیلری','nav.booking':'بکنگ','nav.contact':'رابطہ',
+    'home.title':'تُہندَ پروفیشنل ڈیجیٹل اَند پرنٹنگ پارٹنر','home.desc':'ہم سی ایس سی سروسز، کسٹم فون کور، فوٹو فریمز اور ڈیجیٹل مدد فراہم کرتے ہہُز۔',
+    'cta.book':'بک کرو','cta.learn':'مزید جانیں',
+    'about.title':'Net Gallery Hb بابت','about.desc':'آس منز قابلِ اعتبار سروس سینٹر، سہپورا، گنڈر بل۔',
+    'counters.customers':'خوش کسٹمر','counters.orders':'مکمل آرڈرز','counters.services':'فراہم شدہ سروسز',
+    'services.title':'ہماری سروسز','services.subtitle':'آپ کے لئے مکمل ڈیجیٹل و پرنٹنگ حل',
+    'services.csc':'CSC / eKYC','services.csc.desc':'دستاویزی مدد، آدھار اپڈیٹ اور آن لائن فارم۔',
+    'services.print':'پرنٹنگ','services.print.desc':'ہائی کوالٹی پرنٹنگ، فوٹو کاپی، لیمنیشن اور اسکیننگ۔',
+    'services.covers':'کسٹم کور','services.covers.desc':'ہر ماڈل کیلئے پریمیم فون کورز۔',
+    'services.frames':'فوٹو فریم','services.frames.desc':'کَسٹَم فریم اور گفٹس۔',
+    'services.digital':'ڈیجیٹل مدد','services.digital.desc':'فارم بھرنا، رجسٹریشن اور آن لائن مدد۔',
+    'services.id':'آئ ڈی فوٹوز','services.id.desc':'فوری پاسپورٹ فوٹوز۔',
+    'pricing.title':'قیمت','pricing.subtitle':'واضح اور مسابقتی قیمتیں','pricing.cover':'کسٹم کور','pricing.frame':'فوٹو فریم','pricing.print':'دستاویز پرنٹ (A4)','pricing.passport':'پاسپورٹ فوٹوز (4 پیس)',
+    'booking.title':'آن لائن بکنگ','booking.subtitle':'بکنگ کے لئے درخواست کریں','booking.name.label':'پورا نام *','booking.name.placeholder':'اپنا نام','booking.phone.label':'فون نمبر *','booking.phone.placeholder':'آپ کا نمبر','booking.service.label':'سروس منتخب کریں *','booking.service.select':'سروس منتخب کریں','booking.notes.label':'مزید نوٹس','booking.notes.placeholder':'اپنی تفصیل لکھیں','booking.submit':'ارسال کریں',
+    'reviews.title':'کسٹمر ریویوز','reviews.subtitle':'کسٹمرز کے تاثرات',
+    'review.1.text':'"عمدہ سروس اور تیز پرنٹنگ۔"','review.1.author':'علی','review.1.tag':'تصدیق شدہ',
+    'review.2.text':'"مددگار عملہ اور بہترین فوٹو۔"','review.2.author':'فاطمہ','review.2.tag':'تصدیق شدہ',
+    'review.3.text':'"قیمتیں مناسب اور سروس دوستانہ۔"','review.3.author':'روہت','review.3.tag':'تصدیق شدہ',
+    'contact.title':'رابطہ','contact.subtitle':'ہم سے رابطہ کریں','contact.phone.title':'📞 فون','contact.phone.value':'+91 80824 22129','contact.whatsapp.title':'💬 واٹس ایپ','contact.whatsapp.link':'چیٹ کریں','contact.channel.title':'📧 چینل','contact.channel.link':'جوائن کریں','contact.online.title':'🌐 آن لائن',
+    'social.instagram':'انسٹاگرام','social.youtube':'یوٹیوب','social.facebook':'فیس بُک',
+    'cta.copy':'کاپی','upi.title':'UPI پے کریں','upi.desc':'UPI کے ذریعے ادائیگی کریں۔','upi.note':'ادائیگی بعد سکرین شاٹ بھیجیں۔'
   }
 };
 
-function applyLanguage(lang) {
+function applyLanguage(lang, animate = true){
+  const t = translations[lang] || translations['en'];
   localStorage.setItem('language', lang);
-  // Translate common elements
-  Object.keys(translations[lang] || {}).forEach(key => {
-    const elements = document.querySelectorAll(`[data-i18n="${key}"]`);
-    elements.forEach(el => {
-      el.textContent = translations[lang][key];
+  const root = document.documentElement;
+  const duration = 220; // match CSS transition
+
+  const doUpdate = () => {
+    // set elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(t[key]) el.textContent = t[key];
     });
-  });
+    // placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-placeholder');
+      if(t[key]) el.setAttribute('placeholder', t[key]);
+    });
+    // titles (for icons/links)
+    document.querySelectorAll('[data-i18n-title]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-title');
+      if(t[key]) el.setAttribute('title', t[key]);
+    });
+    // alt text for images
+    document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-alt');
+      if(t[key]) el.setAttribute('alt', t[key]);
+    });
+    // specific value/text overrides
+    document.querySelectorAll('[data-i18n-value]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-value');
+      if(t[key]) el.textContent = t[key];
+    });
+  };
+
+  if(animate){
+    root.classList.add('lang-fade-transition','lang-fade-out');
+    // small timeout to allow CSS to apply
+    setTimeout(()=>{
+      doUpdate();
+      // remove fade-out to fade back in
+      root.classList.remove('lang-fade-out');
+      // cleanup transition class after it finishes
+      setTimeout(()=>root.classList.remove('lang-fade-transition'), duration);
+    }, 120);
+  } else {
+    doUpdate();
+  }
 }
 
-langSelect.addEventListener('change', (e) => {
-  applyLanguage(e.target.value);
-});
+langSelect.addEventListener('change', (e)=>{applyLanguage(e.target.value, true);});
 
-// Initialize language
+// Initialize language on load (no animation)
 const savedLang = localStorage.getItem('language') || 'en';
 langSelect.value = savedLang;
+applyLanguage(savedLang, false);
 
 // ============================================
 // BOOKING FORM

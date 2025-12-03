@@ -54,6 +54,10 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Language-switch fade (smooth text transitions) */
+html.lang-fade-transition { transition: opacity 220ms ease; }
+html.lang-fade-transition.lang-fade-out { opacity: 0.22; pointer-events: none; }
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;

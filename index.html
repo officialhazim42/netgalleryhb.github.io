@@ -103,12 +103,12 @@
         <span></span>
         <span></span>
       </button>
-      <ul class="navbar-menu" id="navMenu">
-        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
-        <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
-        <li><a href="#booking" class="nav-link" data-section="booking">Booking</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        <ul class="navbar-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active" data-section="home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#services" class="nav-link" data-section="services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#gallery" class="nav-link" data-section="gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#booking" class="nav-link" data-section="booking" data-i18n="nav.booking">Booking</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="navbar-actions">
         <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode" title="Dark Mode">🌙</button>
@@ -129,11 +129,11 @@
       <!-- Hero Section -->
       <section id="home" class="section hero">
         <div class="hero-content">
-          <h1>Your Trusted Digital & Printing Partner</h1>
-          <p>Professional CSC services, custom phone covers, photo frames, and comprehensive digital solutions in Ganderbal.</p>
+          <h1 data-i18n="home.title">Your Trusted Digital & Printing Partner</h1>
+          <p data-i18n="home.desc">Professional CSC services, custom phone covers, photo frames, and comprehensive digital solutions in Ganderbal.</p>
           <div class="hero-cta">
-            <button class="btn btn-primary" onclick="scrollToSection('booking')">Book Now</button>
-            <button class="btn btn-secondary" onclick="scrollToSection('services')">Learn More</button>
+            <button class="btn btn-primary" onclick="scrollToSection('booking')" data-i18n="cta.book">Book Now</button>
+            <button class="btn btn-secondary" onclick="scrollToSection('services')" data-i18n="cta.learn">Learn More</button>
           </div>
         </div>
         <div class="hero-image">
@@ -158,21 +158,21 @@
       <section class="section about">
         <div class="content-grid">
           <div class="content-block">
-            <h2>About Net Gallery Hb</h2>
-            <p>We are a trusted service center providing comprehensive digital and printing solutions since our establishment in Sahipora, Ganderbal. Our commitment to quality and customer satisfaction sets us apart.</p>
+            <h2 data-i18n="about.title">About Net Gallery Hb</h2>
+            <p data-i18n="about.desc">We are a trusted service center providing comprehensive digital and printing solutions since our establishment in Sahipora, Ganderbal. Our commitment to quality and customer satisfaction sets us apart.</p>
           </div>
           <div class="stats">
             <div class="stat-card">
               <div class="stat-number" data-target="1200">0</div>
-              <p>Happy Customers</p>
+              <p data-i18n="counters.customers">Happy Customers</p>
             </div>
             <div class="stat-card">
               <div class="stat-number" data-target="3500">0</div>
-              <p>Orders Completed</p>
+              <p data-i18n="counters.orders">Orders Completed</p>
             </div>
             <div class="stat-card">
               <div class="stat-number" data-target="8500">0</div>
-              <p>Services Delivered</p>
+              <p data-i18n="counters.services">Services Delivered</p>
             </div>
           </div>
         </div>
@@ -180,49 +180,49 @@
 
       <!-- Services Section -->
       <section id="services" class="section services">
-        <h2>Our Services</h2>
-        <p class="section-subtitle">Complete digital and printing solutions tailored to your needs</p>
+        <h2 data-i18n="services.title">Our Services</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Complete digital and printing solutions tailored to your needs</p>
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">📋</div>
-            <h3>CSC / eKYC</h3>
-            <p>Government documentation, Aadhaar updates, certificates, and online form submissions.</p>
+            <h3 data-i18n="services.csc">CSC / eKYC</h3>
+            <p data-i18n="services.csc.desc">Government documentation, Aadhaar updates, certificates, and online form submissions.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🖨️</div>
-            <h3>Printing Services</h3>
-            <p>High-quality color and B&W printing, photocopying, lamination, and scanning.</p>
+            <h3 data-i18n="services.print">Printing Services</h3>
+            <p data-i18n="services.print.desc">High-quality color and B&W printing, photocopying, lamination, and scanning.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">📱</div>
-            <h3>Custom Phone Covers</h3>
-            <p>Personalized premium-quality phone covers for all models with vibrant printing.</p>
+            <h3 data-i18n="services.covers">Custom Phone Covers</h3>
+            <p data-i18n="services.covers.desc">Personalized premium-quality phone covers for all models with vibrant printing.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🖼️</div>
-            <h3>Photo Frames</h3>
-            <p>Customizable photo frames, gift frames, and decorative wall art.</p>
+            <h3 data-i18n="services.frames">Photo Frames</h3>
+            <p data-i18n="services.frames.desc">Customizable photo frames, gift frames, and decorative wall art.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">💻</div>
-            <h3>Digital Help</h3>
-            <p>Online registrations, form filling, tech support, and digital assistance.</p>
+            <h3 data-i18n="services.digital">Digital Help</h3>
+            <p data-i18n="services.digital.desc">Online registrations, form filling, tech support, and digital assistance.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">📸</div>
-            <h3>ID Photos</h3>
-            <p>Instant passport-size photos with professional editing and printing.</p>
+            <h3 data-i18n="services.id">ID Photos</h3>
+            <p data-i18n="services.id.desc">Instant passport-size photos with professional editing and printing.</p>
           </div>
         </div>
       </section>
 
       <!-- Pricing Section -->
       <section class="section pricing">
-        <h2>Pricing</h2>
-        <p class="section-subtitle">Transparent and competitive pricing</p>
+        <h2 data-i18n="pricing.title">Pricing</h2>
+        <p class="section-subtitle" data-i18n="pricing.subtitle">Transparent and competitive pricing</p>
         <div class="pricing-grid">
           <div class="price-card">
-            <h3>Custom Phone Cover</h3>
+            <h3 data-i18n="pricing.cover">Custom Phone Cover</h3>
             <p class="price">₹299</p>
             <ul>
               <li>All phone models</li>
@@ -231,7 +231,7 @@
             </ul>
           </div>
           <div class="price-card">
-            <h3>Photo Frame (Small)</h3>
+            <h3 data-i18n="pricing.frame">Photo Frame (Small)</h3>
             <p class="price">₹199</p>
             <ul>
               <li>Customizable</li>
@@ -240,7 +240,7 @@
             </ul>
           </div>
           <div class="price-card featured">
-            <h3>Document Printing (A4)</h3>
+            <h3 data-i18n="pricing.print">Document Printing (A4)</h3>
             <p class="price">₹10/page</p>
             <ul>
               <li>Color & B&W</li>
@@ -249,8 +249,8 @@
             </ul>
           </div>
           <div class="price-card">
-            <h3>Passport Photos (4 pcs)</h3>
-            <p class="price">₹60</p>
+            <h3 data-i18n="pricing.passport">Passport Photos (4 pcs)</h3>
+            <p class="price">₹149</p>
             <ul>
               <li>Professional editing</li>
               <li>Instant printing</li>
@@ -276,23 +276,23 @@
 
       <!-- Booking Section -->
       <section id="booking" class="section booking">
-        <h2>Book Our Services</h2>
-        <p class="section-subtitle">Request a booking and we'll contact you shortly</p>
+        <h2 data-i18n="booking.title">Book Our Services</h2>
+        <p class="section-subtitle" data-i18n="booking.subtitle">Request a booking and we'll contact you shortly</p>
         <form id="bookingForm" class="booking-form" novalidate>
           <div class="form-group">
-            <label for="bname">Full Name *</label>
-            <input type="text" id="bname" name="name" placeholder="Your full name" required>
+            <label for="bname" data-i18n="booking.name.label">Full Name *</label>
+            <input type="text" id="bname" name="name" placeholder="Your full name" data-i18n-placeholder="booking.name.placeholder" required>
             <span class="error-msg" id="nameError"></span>
           </div>
           <div class="form-group">
-            <label for="bphone">Phone Number *</label>
-            <input type="tel" id="bphone" name="phone" placeholder="Your phone number" pattern="[0-9]{10}" required>
+            <label for="bphone" data-i18n="booking.phone.label">Phone Number *</label>
+            <input type="tel" id="bphone" name="phone" placeholder="Your phone number" data-i18n-placeholder="booking.phone.placeholder" pattern="[0-9]{10}" required>
             <span class="error-msg" id="phoneError"></span>
           </div>
           <div class="form-group">
-            <label for="bservice">Service Required *</label>
+            <label for="bservice" data-i18n="booking.service.label">Service Required *</label>
             <select id="bservice" name="service" required>
-              <option value="">Select a service</option>
+              <option value="" data-i18n="booking.service.select">Select a service</option>
               <option value="csc">CSC / eKYC</option>
               <option value="printing">Printing</option>
               <option value="covers">Custom Phone Covers</option>
@@ -303,36 +303,36 @@
             <span class="error-msg" id="serviceError"></span>
           </div>
           <div class="form-group">
-            <label for="bnotes">Additional Notes</label>
-            <textarea id="bnotes" name="notes" placeholder="Tell us more about your requirements" rows="4"></textarea>
+            <label for="bnotes" data-i18n="booking.notes.label">Additional Notes</label>
+            <textarea id="bnotes" name="notes" placeholder="Tell us more about your requirements" data-i18n-placeholder="booking.notes.placeholder" rows="4"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Submit Booking Request</button>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="booking.submit">Submit Booking Request</button>
           <div id="bookingResult" class="form-message"></div>
         </form>
       </section>
 
       <!-- Reviews Section -->
       <section class="section reviews">
-        <h2>Customer Reviews</h2>
-        <p class="section-subtitle">What our customers say about us</p>
+        <h2 data-i18n="reviews.title">Customer Reviews</h2>
+        <p class="section-subtitle" data-i18n="reviews.subtitle">What our customers say about us</p>
         <div class="reviews-carousel">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Great service and fast printing. Highly recommended. Will definitely come back."</p>
-            <strong>Ali Ahmed</strong>
-            <span>Verified Customer</span>
+            <p data-i18n="review.1.text">"Great service and fast printing. Highly recommended. Will definitely come back."</p>
+            <strong data-i18n="review.1.author">Ali Ahmed</strong>
+            <span data-i18n="review.1.tag">Verified Customer</span>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Helpful staff and excellent photo quality. The custom phone cover is amazing!"</p>
-            <strong>Fatima Khan</strong>
-            <span>Verified Customer</span>
+            <p data-i18n="review.2.text">"Helpful staff and excellent photo quality. The custom phone cover is amazing!"</p>
+            <strong data-i18n="review.2.author">Fatima Khan</strong>
+            <span data-i18n="review.2.tag">Verified Customer</span>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Good prices and friendly service. Best printing shop in Ganderbal. Will come again."</p>
-            <strong>Rohit Sharma</strong>
-            <span>Verified Customer</span>
+            <p data-i18n="review.3.text">"Good prices and friendly service. Best printing shop in Ganderbal. Will come again."</p>
+            <strong data-i18n="review.3.author">Rohit Sharma</strong>
+            <span data-i18n="review.3.tag">Verified Customer</span>
           </div>
         </div>
         <div class="carousel-controls">
@@ -343,20 +343,20 @@
 
       <!-- Contact Section -->
       <section id="contact" class="section contact">
-        <h2>Get In Touch</h2>
-        <p class="section-subtitle">Multiple ways to reach us</p>
+        <h2 data-i18n="contact.title">Get In Touch</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Multiple ways to reach us</p>
         <div class="contact-grid">
           <div class="contact-item">
-            <h3>📞 Phone</h3>
-            <a href="tel:+918082422129">+91 80824 22129</a>
+            <h3 data-i18n="contact.phone.title">📞 Phone</h3>
+            <a href="tel:+918082422129" data-i18n="contact.phone.value">+91 80824 22129</a>
           </div>
           <div class="contact-item">
-            <h3>💬 WhatsApp</h3>
-            <a href="https://wa.me/918082422129" target="_blank">Chat with us</a>
+            <h3 data-i18n="contact.whatsapp.title">💬 WhatsApp</h3>
+            <a href="https://wa.me/918082422129" target="_blank" data-i18n="contact.whatsapp.link">Chat with us</a>
           </div>
           <div class="contact-item">
-            <h3>📧 Channel</h3>
-            <a href="https://whatsapp.com/channel/0029VaaUBHJDDmFbS3NeYc3C" target="_blank">Join Channel</a>
+            <h3 data-i18n="contact.channel.title">📧 Channel</h3>
+            <a href="https://whatsapp.com/channel/0029VaaUBHJDDmFbS3NeYc3C" target="_blank" data-i18n="contact.channel.link">Join Channel</a>
           </div>
           <div class="contact-item">
             <h3>📍 Location</h3>
@@ -367,11 +367,11 @@
             <p>Monday - Saturday<br>10:00 AM - 7:00 PM</p>
           </div>
           <div class="contact-item">
-            <h3>🌐 Online</h3>
+            <h3 data-i18n="contact.online.title">🌐 Online</h3>
             <div class="social-links">
-              <a href="https://instagram.com/netgalleryhb" target="_blank" title="Instagram">📷</a>
-              <a href="https://youtube.com/@NetGalleryHb" target="_blank" title="YouTube">📹</a>
-              <a href="https://facebook.com/289669560904356" target="_blank" title="Facebook">f</a>
+              <a href="https://instagram.com/netgalleryhb" target="_blank" title="Instagram" data-i18n-title="social.instagram">📷</a>
+              <a href="https://youtube.com/@NetGalleryHb" target="_blank" title="YouTube" data-i18n-title="social.youtube">📹</a>
+              <a href="https://facebook.com/289669560904356" target="_blank" title="Facebook" data-i18n-title="social.facebook">f</a>
             </div>
           </div>
         </div>
