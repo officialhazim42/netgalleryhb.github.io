@@ -931,15 +931,15 @@ body.light-mode .contact-item p {
   width: 50px;
   height: 50px;
   border-radius: var(--radius-md);
-  background: rgba(14, 165, 233, 0.1);
+  background: transparent;
   color: var(--primary);
   text-decoration: none;
   transition: var(--transition);
   font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(14, 165, 233, 0.2);
+  box-shadow: none;
+  border: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .social-icon-link svg {
@@ -947,13 +947,21 @@ body.light-mode .contact-item p {
   height: 24px;
   transition: var(--transition);
 }
+.social-icon-link img,
+.social-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 220ms ease, filter 220ms ease;
+}
 
 .social-icon-link:hover {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.4);
-  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.social-icon-link:hover img,
+.social-icon-link:hover .social-icon-img {
+  transform: translateY(-6px) scale(1.06);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.18));
 }
 
 .social-icon-link:active {
@@ -982,22 +990,21 @@ body.light-mode .contact-item p {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background: rgba(14, 165, 233, 0.1);
+  background: transparent;
   color: var(--primary);
   text-decoration: none;
   transition: var(--transition);
   font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(14, 165, 233, 0.2);
+  box-shadow: none;
+  border: none;
   position: relative;
 }
 
 .social-links a:hover {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.4);
-  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.social-links a:hover img {
+  transform: translateY(-6px) scale(1.06);
 }
 
 .social-links a:active {
@@ -1676,7 +1683,9 @@ body.light-mode .footer-bottom {
   width: 54px;
   height: 54px;
   font-size: 1.8rem;
-  background: rgba(14, 165, 233, 0.15);
+  background: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .footer .social-links.footer-social .social-icon-link svg {
