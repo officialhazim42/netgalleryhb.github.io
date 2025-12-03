@@ -1084,6 +1084,12 @@ body.light-mode .faq-item p {
   text-decoration: none;
 }
 
+.floating-btn svg {
+  width: 28px;
+  height: 28px;
+  transition: var(--transition);
+}
+
 .floating-chat {
   background: var(--primary);
   color: white;
@@ -1092,6 +1098,16 @@ body.light-mode .faq-item p {
 .floating-chat:hover {
   transform: scale(1.1);
   background: var(--primary-dark);
+}
+
+.floating-pay {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.floating-pay:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #059669, #047857);
 }
 
 .floating-whatsapp {
@@ -1653,13 +1669,6 @@ body.light-mode .footer-bottom {
 
 .footer .social-links a {
   min-width: 40px;
-}
-
-/* Floating pay button */
-.floating-pay {
-  background: linear-gradient(135deg,#0ea5e9,#60a5fa);
-  color: white;
-  box-shadow: 0 8px 28px rgba(14,165,233,0.28);
 }
 
 /* UPI Modal */
