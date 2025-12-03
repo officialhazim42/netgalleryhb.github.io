@@ -440,6 +440,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
+// UPI PAYMENT (Modal + QR)
+// ============================================
+
+const UPI_ID = 'erhashim@yespop';
+const floatingPayBtn = document.getElementById('floatingPayBtn');
+const upiModal = document.getElementById('upiModal');
+const closeUpi = document.getElementById('closeUpi');
+const upiQR = document.getElementById('upiQR');
+const copyUpi = document.getElementById('copyUpi');
+const upiDeepLink = document.getElementById('upiDeepLink');
+
+function generateUpiQR(amount = 0){
+  const url = `upi://pay?pa=${UPI_ID}&pn=NetGalleryHb&am=${amount}&cu=INR`;
+  return `https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=${encodeURIComponent(url)}`;
+}
+
+function openUpiModal(){
+  if(!upiModal) return;
+  upiModal.classList.remove('hidden');
+  if(upiQR) upiQR.src = generateUpiQR(0);
+  if(upiDeepLink) upiDeepLink.href = `upi://pay?pa=${UPI_ID}&pn=NetGalleryHb&cu=INR`;
+}
+
+function closeUpiModal(){
+  if(!upiModal) return;
+  upiModal.classList.add('hidden');
+}
+
+if(floatingPayBtn) floatingPayBtn.addEventListener('click', openUpiModal);
+if(closeUpi) closeUpi.addEventListener('click', closeUpiModal);
+if(copyUpi) copyUpi.addEventListener('click', async () => {
+  try{
+    await navigator.clipboard.writeText(UPI_ID);
+    copyUpi.textContent = 'Copied';
+    setTimeout(()=> copyUpi.textContent = 'Copy', 1800);
+  }catch(e){
+    console.warn('clipboard failed', e);
+  }
+});
+
+
+// ============================================
 // INITIALIZE
 // ============================================
 

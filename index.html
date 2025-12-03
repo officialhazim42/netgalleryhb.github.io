@@ -49,6 +49,7 @@
       "streetAddress": "Sahipora",
       "addressLocality": "Ganderbal",
       "addressRegion": "Jammu & Kashmir",
+      "postalCode": "191201",
       "addressCountry": "IN"
     },
     "openingHoursSpecification": [
@@ -71,17 +72,7 @@
   <div id="loaderScreen" class="loader">
     <div class="loader-content">
       <div class="loader-logo">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="45" fill="url(#logoGrad)" opacity="0.2"/>
-          <circle cx="50" cy="50" r="35" fill="none" stroke="url(#logoGrad)" stroke-width="2"/>
-          <text x="50" y="55" font-size="28" font-weight="800" text-anchor="middle" fill="#0ea5e9">NG</text>
-        </svg>
+        <img src="assets/logo.png" alt="Net Gallery Hb logo" class="loader-img" />
       </div>
       <p class="loader-text">Loading Net Gallery Hb...</p>
     </div>
@@ -100,7 +91,7 @@
     <div class="navbar-container">
       <div class="navbar-brand">
         <a href="#" class="brand-link">
-          <div class="brand-icon">NG</div>
+          <img src="assets/logo.png" alt="Net Gallery Hb" class="brand-logo-img" />
           <div>
             <h2 class="brand-name">Net Gallery Hb</h2>
             <p class="brand-location">Sahipora, Ganderbal</p>
@@ -259,7 +250,7 @@
           </div>
           <div class="price-card">
             <h3>Passport Photos (4 pcs)</h3>
-            <p class="price">₹149</p>
+            <p class="price">₹60</p>
             <ul>
               <li>Professional editing</li>
               <li>Instant printing</li>
@@ -426,6 +417,7 @@
   <!-- Floating Action Buttons -->
   <div class="floating-actions">
     <button id="floatingChat" class="floating-btn floating-chat" title="Chat with us" aria-label="Open chat">💬</button>
+    <button id="floatingPayBtn" class="floating-btn floating-pay" title="Pay via UPI" aria-label="Pay via UPI">💳</button>
     <a href="https://wa.me/918082422129" class="floating-btn floating-whatsapp" title="WhatsApp" aria-label="Open WhatsApp">💬</a>
   </div>
 
@@ -474,6 +466,23 @@
   </footer>
 
   <!-- Scripts -->
+  <!-- UPI Payment Modal -->
+  <div id="upiModal" class="upi-modal hidden" role="dialog" aria-modal="true" aria-labelledby="upiTitle">
+    <div class="upi-modal-panel">
+      <button id="closeUpi" class="upi-close" aria-label="Close">✕</button>
+      <h3 id="upiTitle">Pay via UPI</h3>
+      <p class="upi-desc">Pay securely using UPI. Scan the QR or copy the UPI ID.</p>
+      <div class="upi-body">
+        <img id="upiQR" src="" alt="UPI QR" class="upi-qr" />
+        <div class="upi-info">
+          <label>UPI ID</label>
+          <div class="upi-id">erhashim@yespop <button id="copyUpi" class="btn btn-sm">Copy</button></div>
+          <div style="margin-top:8px"><a id="upiDeepLink" class="btn btn-secondary" href="#">Open UPI App</a></div>
+        </div>
+      </div>
+      <small class="upi-note">Tip: After payment, send a screenshot to our WhatsApp for confirmation.</small>
+    </div>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Net Gallery Hb Website — Project Summary
 
-## ✅ Website Created Successfully
+# Website Created Successfully
 
 A complete, professional website has been built for **Net Gallery Hb** with modern design, responsive layout, and full functionality.
 
