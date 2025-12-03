@@ -1089,6 +1089,13 @@ body.light-mode .faq-item p {
   height: 28px;
   transition: var(--transition);
 }
+.floating-btn img,
+.floating-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: var(--transition);
+}
 
 .floating-chat {
   background: var(--primary);
@@ -1389,10 +1396,17 @@ body.light-mode .footer-bottom {
   }
 
   .social-icon-link svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+    transition: var(--transition);
   }
-
+  .social-icon-link img,
+  .social-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: var(--transition);
+  }
   .social-label {
     font-size: 0.65rem;
   }
@@ -1512,6 +1526,12 @@ body.light-mode .footer-bottom {
     width: 20px;
     height: 20px;
   }
+  .social-icon-link img,
+  .social-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
 
   .social-label {
     font-size: 0.65rem;
@@ -1525,6 +1545,12 @@ body.light-mode .footer-bottom {
   .footer .social-links.footer-social .social-icon-link svg {
     width: 24px;
     height: 24px;
+  }
+  .footer .social-links.footer-social .social-icon-link img,
+  .footer .social-links.footer-social .social-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
   }
 }
 
