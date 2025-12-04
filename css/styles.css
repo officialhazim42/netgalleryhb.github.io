@@ -1335,6 +1335,62 @@ body.light-mode #chatInput {
   border-color: var(--primary);
 }
 
+/* Chat action buttons + inline UPI QR */
+.chat-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chat-pay-btn, .chat-copy-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chat-pay-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 6px 16px rgba(14,165,233,0.18);
+}
+
+.chat-pay-btn:hover { transform: translateY(-2px); }
+
+.chat-copy-btn {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-dark);
+  border: 1px solid rgba(14,165,233,0.08);
+}
+
+.chat-copy-btn:hover { transform: translateY(-2px); }
+
+.chat-qr {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+
+.chat-qr-wrapper {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.chat-qr-meta {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
 /* ============================================
    FOOTER
    ============================================ */

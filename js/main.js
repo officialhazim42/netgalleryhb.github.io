@@ -78,6 +78,30 @@ themeToggle.addEventListener('click', () => {
   applyTheme(newTheme);
 });
 
+// Simple analytics tracker: increments counters in localStorage and attempts sendBeacon
+function trackEvent(name, payload = {}) {
+  try {
+    const key = `analytics.${name}`;
+    const current = parseInt(localStorage.getItem(key) || '0', 10);
+    localStorage.setItem(key, String(current + 1));
+  } catch (e) {
+    // ignore storage errors
+  }
+
+  try {
+    const body = JSON.stringify({ event: name, payload, ts: Date.now() });
+    if (navigator.sendBeacon) {
+      // send to a no-op endpoint; site owners can change this to a real endpoint
+      navigator.sendBeacon('/analytics', body);
+    } else if (window.fetch) {
+      fetch('/analytics', { method: 'POST', body, keepalive: true }).catch(()=>{});
+    }
+  } catch (e) {
+    // best-effort
+    console.log('trackEvent', name, payload);
+  }
+}
+
 // ============================================
 // LANGUAGE SUPPORT (full-site)
 // ============================================
@@ -504,48 +528,64 @@ function addChatMessage(text, sender) {
   if (!chatMessages) return;
   const messageDiv = document.createElement('div');
   messageDiv.className = `chat-message ${sender}`;
-
   // Message content
   const p = document.createElement('p');
   p.textContent = text;
   messageDiv.appendChild(p);
 
-  // If bot mentions payment/UPI, add action buttons
+  // If bot mentions payment/UPI, add action buttons + inline QR support
   try {
     const lowered = String(text).toLowerCase();
-    const mentionsPayment = /upi|pay|payment|upi id/.test(lowered);
+    const mentionsPayment = /\b(upi|pay|payment|upi id|google pay|phonepe)\b/.test(lowered);
     if (!chatMessages) return;
 
     if (sender === 'bot' && mentionsPayment) {
       const actions = document.createElement('div');
       actions.className = 'chat-actions';
 
-      // Pay via UPI button
+      // Pay via UPI button - toggles inline QR and also opens modal/deeplink if desired
       const payBtn = document.createElement('button');
       payBtn.className = 'btn chat-pay-btn';
       payBtn.type = 'button';
       payBtn.textContent = 'Pay via UPI';
       payBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        // Prefer modal if available
-        try {
-          if (typeof openUpiModal === 'function') {
-            openUpiModal();
-            return;
-          }
-        } catch (err) {
-          // ignore
+        // Analytics
+        try { trackEvent('chat_pay_click', { source: 'chat' }); } catch(e){}
+
+        // Toggle inline QR
+        let qrWrap = messageDiv.querySelector('.chat-qr-wrapper');
+        if (qrWrap) {
+          // toggle
+          qrWrap.style.display = qrWrap.style.display === 'none' ? 'flex' : 'none';
+          return;
         }
-        // Fallback: open UPI deep link or show copy
-        try {
-          if (typeof upiDeepLink !== 'undefined' && upiDeepLink && upiDeepLink.href) {
-            window.open(upiDeepLink.href, '_blank');
-            return;
-          }
-        } catch (err) {}
-        // Final fallback: open UPI intent via URL
-        const upiUrl = `upi://pay?pa=${encodeURIComponent('erhashim@yespop')}&pn=NetGalleryHb&cu=INR`;
-        try { window.open(upiUrl, '_self'); } catch(e) { /* ignore */ }
+
+        // Create QR wrapper
+        qrWrap = document.createElement('div');
+        qrWrap.className = 'chat-qr-wrapper';
+
+        const qrImg = document.createElement('img');
+        qrImg.className = 'chat-qr';
+        // Prefer user-provided QR image
+        const localUpiPath = 'assets/upi_qr.png';
+        qrImg.onerror = () => { qrImg.src = generateUpiQR(0); };
+        qrImg.src = localUpiPath;
+
+        const meta = document.createElement('div');
+        meta.className = 'chat-qr-meta';
+        meta.innerHTML = `<div><strong>UPI ID:</strong> erhashim@yespop</div>`;
+
+        const openLink = document.createElement('a');
+        openLink.href = typeof upiDeepLink !== 'undefined' && upiDeepLink && upiDeepLink.href ? upiDeepLink.href : `upi://pay?pa=${encodeURIComponent('erhashim@yespop')}&pn=NetGalleryHb&cu=INR`;
+        openLink.target = '_blank';
+        openLink.className = 'map-link-btn';
+        openLink.textContent = 'Open in UPI app';
+
+        meta.appendChild(openLink);
+        qrWrap.appendChild(qrImg);
+        qrWrap.appendChild(meta);
+        messageDiv.appendChild(qrWrap);
       });
 
       // Copy UPI button
@@ -558,6 +598,7 @@ function addChatMessage(text, sender) {
         try {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText('erhashim@yespop');
+            try { trackEvent('chat_copy_upi', {}); } catch(e){}
             copyBtn.textContent = 'Copied!';
             setTimeout(()=> copyBtn.textContent = 'Copy UPI ID', 1500);
           } else {
@@ -567,6 +608,7 @@ function addChatMessage(text, sender) {
             tmp.select();
             document.execCommand('copy');
             document.body.removeChild(tmp);
+            try { trackEvent('chat_copy_upi', {}); } catch(e){}
             copyBtn.textContent = 'Copied!';
             setTimeout(()=> copyBtn.textContent = 'Copy UPI ID', 1500);
           }
