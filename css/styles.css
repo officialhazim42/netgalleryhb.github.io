@@ -1825,6 +1825,178 @@ body.light-mode .footer-bottom {
 .upi-note { color:var(--text-muted); display:block; margin-top:10px }
 
 /* ============================================
+   MAP VIEW SECTION
+   ============================================ */
+
+.map-view {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+}
+
+.map-view h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.map-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.map-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+}
+
+.map-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.map-info-card {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(124, 58, 237, 0.1));
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.map-info-card:hover {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(124, 58, 237, 0.15));
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+}
+
+.map-info-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary);
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-info-card p {
+  margin: 0.5rem 0;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.map-info-note {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-top: 0.75rem !important;
+  font-style: italic;
+}
+
+.map-link-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.map-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+}
+
+.map-link-btn.whatsapp-btn {
+  background: linear-gradient(135deg, #25d366, #1aad56);
+}
+
+.map-link-btn.whatsapp-btn:hover {
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Map View Responsive */
+@media (max-width: 768px) {
+  .map-view h2 {
+    font-size: 1.8em;
+  }
+
+  .map-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .map-wrapper iframe {
+    height: 350px;
+  }
+
+  .map-info-card {
+    padding: 1.2rem;
+  }
+
+  .map-info-card h3 {
+    font-size: 1.1em;
+  }
+
+  .map-info-card p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-view h2 {
+    font-size: 1.5em;
+  }
+
+  .map-container {
+    gap: 1rem;
+  }
+
+  .map-wrapper iframe {
+    height: 300px;
+  }
+
+  .map-info-card {
+    padding: 1rem;
+  }
+
+  .map-info-card h3 {
+    font-size: 1em;
+  }
+
+  .map-info-card p {
+    font-size: 0.85em;
+  }
+
+  .map-link-btn {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+}
+
+/* ============================================
    ADVANCED CHATBOT WIDGET
    ============================================ */
 
