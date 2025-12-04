@@ -68,7 +68,7 @@ Edit `css/styles.css`:
 ### Content Changes
 - **Business Info**: Edit `index.html` sections
 - **Phone**: Update `+918082422129`
-- **Email**: Update `netgalleryhb@example.com`
+- **Email**: Update `netgalleryhb@gmail.com`
 - **UPI ID**: Update `erhashim@yespop` in `js/main.js`
 
 ## 🌐 SEO & Performance
