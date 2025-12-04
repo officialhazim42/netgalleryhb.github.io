@@ -810,6 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('📍 Sahipora, Ganderbal | 📞 +91 80824 22129');
 });
 
+
 // ============================================
 // PERFORMANCE: Register Service Worker (optional)
 // ============================================
@@ -826,3 +827,4 @@ if ('serviceWorker' in navigator) {
 // if (window.location.hostname !== 'localhost') {
 //   console.log = console.warn = console.error = () => {};
 // }
+

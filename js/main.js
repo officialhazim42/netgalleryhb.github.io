@@ -102,6 +102,30 @@ function trackEvent(name, payload = {}) {
   }
 }
 
+
+
+// Button Get karo
+let scrollBtn = document.getElementById("scrollTopBtn");
+
+// Jab user scroll kare → button show karo
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+// Click → Smooth Scroll to Top
+scrollBtn.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+
 // ============================================
 // LANGUAGE SUPPORT (full-site)
 // ============================================
