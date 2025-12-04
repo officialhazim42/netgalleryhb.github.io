@@ -22,17 +22,21 @@ const reviewsPrev = document.getElementById('reviewsPrev');
 // NAVIGATION
 // ============================================
 
-navToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    navLinks.forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
-    navMenu.classList.remove('active');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
   });
-});
+}
+
+if (navLinks && navLinks.length > 0) {
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      if (navMenu) navMenu.classList.remove('active');
+    });
+  });
+}
 
 // Scroll to section helper
 function scrollToSection(id) {
@@ -223,12 +227,14 @@ function applyLanguage(lang, animate = true){
   }
 }
 
-langSelect.addEventListener('change', (e)=>{applyLanguage(e.target.value, true);});
-
-// Initialize language on load (no animation)
-const savedLang = localStorage.getItem('language') || 'en';
-langSelect.value = savedLang;
-applyLanguage(savedLang, false);
+if (langSelect) {
+  langSelect.addEventListener('change', (e)=>{applyLanguage(e.target.value, true);});
+  
+  // Initialize language on load (no animation)
+  const savedLang = localStorage.getItem('language') || 'en';
+  langSelect.value = savedLang;
+  applyLanguage(savedLang, false);
+}
 
 // ============================================
 // BOOKING FORM
@@ -242,31 +248,32 @@ function validatePhone(phone) {
   return /^[0-9]{10}$/.test(phone.replace(/\D/g, ''));
 }
 
-bookingForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const name = document.getElementById('bname').value.trim();
-  const phone = document.getElementById('bphone').value.trim();
-  const service = document.getElementById('bservice').value;
-  const notes = document.getElementById('bnotes').value.trim();
-  
-  const bookingResult = document.getElementById('bookingResult');
-  
-  // Reset messages
-  bookingResult.textContent = '';
-  bookingResult.className = 'form-message';
-  
-  // Validation
-  if (!name) {
-    document.getElementById('nameError').textContent = 'Name is required';
-    return;
-  }
-  
-  if (!validatePhone(phone)) {
-    document.getElementById('phoneError').textContent = 'Valid 10-digit phone number required';
-    return;
-  }
-  
+if (bookingForm) {
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('bname').value.trim();
+    const phone = document.getElementById('bphone').value.trim();
+    const service = document.getElementById('bservice').value;
+    const notes = document.getElementById('bnotes').value.trim();
+    
+    const bookingResult = document.getElementById('bookingResult');
+    
+    // Reset messages
+    bookingResult.textContent = '';
+    bookingResult.className = 'form-message';
+    
+    // Validation
+    if (!name) {
+      document.getElementById('nameError').textContent = 'Name is required';
+      return;
+    }
+    
+    if (!validatePhone(phone)) {
+      document.getElementById('phoneError').textContent = 'Valid 10-digit phone number required';
+      return;
+    }
+    
   if (!service) {
     document.getElementById('serviceError').textContent = 'Please select a service';
     return;
@@ -293,7 +300,8 @@ bookingForm.addEventListener('submit', async (e) => {
     bookingResult.textContent = 'There was an error. Please try again or contact us directly.';
     bookingResult.className = 'form-message error';
   }
-});
+  });
+}
 
 // ============================================
 // COUNTER ANIMATION
@@ -346,24 +354,30 @@ function showReview(index) {
   });
 }
 
-reviewsNext.addEventListener('click', () => {
-  currentReviewIndex = (currentReviewIndex + 1) % reviewCount;
-  showReview(currentReviewIndex);
-});
+if (reviewsNext && reviewCards.length > 0) {
+  reviewsNext.addEventListener('click', () => {
+    currentReviewIndex = (currentReviewIndex + 1) % reviewCount;
+    showReview(currentReviewIndex);
+  });
+}
 
-reviewsPrev.addEventListener('click', () => {
-  currentReviewIndex = (currentReviewIndex - 1 + reviewCount) % reviewCount;
-  showReview(currentReviewIndex);
-});
+if (reviewsPrev && reviewCards.length > 0) {
+  reviewsPrev.addEventListener('click', () => {
+    currentReviewIndex = (currentReviewIndex - 1 + reviewCount) % reviewCount;
+    showReview(currentReviewIndex);
+  });
+}
 
 // Show first review
-showReview(0);
-
-// Auto-rotate reviews
-setInterval(() => {
-  currentReviewIndex = (currentReviewIndex + 1) % reviewCount;
-  showReview(currentReviewIndex);
-}, 5000);
+if (reviewCards.length > 0) {
+  showReview(0);
+  
+  // Auto-rotate reviews
+  setInterval(() => {
+    currentReviewIndex = (currentReviewIndex + 1) % reviewCount;
+    showReview(currentReviewIndex);
+  }, 5000);
+}
 
 // ============================================
 // CHAT WIDGET
@@ -393,6 +407,7 @@ function getBotResponse(message) {
 }
 
 function addChatMessage(text, sender) {
+  if (!chatMessages) return;
   const messageDiv = document.createElement('div');
   messageDiv.className = `chat-message ${sender}`;
   messageDiv.textContent = text;
@@ -401,6 +416,7 @@ function addChatMessage(text, sender) {
 }
 
 function sendChat() {
+  if (!chatInput) return;
   const message = chatInput.value.trim();
   if (!message) return;
   
@@ -413,25 +429,33 @@ function sendChat() {
   }, 600);
 }
 
-chatButton.addEventListener('click', () => {
-  chatWidget.classList.toggle('hidden');
-  if (!chatWidget.classList.contains('hidden')) {
-    chatInput.focus();
-  }
-});
+if (chatButton && chatWidget) {
+  chatButton.addEventListener('click', () => {
+    chatWidget.classList.toggle('hidden');
+    if (!chatWidget.classList.contains('hidden') && chatInput) {
+      chatInput.focus();
+    }
+  });
+}
 
-closeChat.addEventListener('click', () => {
-  chatWidget.classList.add('hidden');
-});
+if (closeChat && chatWidget) {
+  closeChat.addEventListener('click', () => {
+    chatWidget.classList.add('hidden');
+  });
+}
 
-chatSend.addEventListener('click', sendChat);
+if (chatSend) {
+  chatSend.addEventListener('click', sendChat);
+}
 
-chatInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    sendChat();
-  }
-});
+if (chatInput) {
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      sendChat();
+    }
+  });
+}
 
 // ============================================
 // INTERSECTION OBSERVER for animations
