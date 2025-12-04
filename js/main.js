@@ -384,24 +384,118 @@ if (reviewCards.length > 0) {
 // ============================================
 
 const chatResponses = {
-  price: 'Our prices: Custom Cover ₹299 | Photo Frame ₹199 | Document Print ₹10/page | Passport Photos ₹149. Contact us for bulk orders!',
-  hours: 'We are open Monday - Saturday, 10:00 AM to 7:00 PM. Closed on Sundays.',
-  payment: 'We accept UPI, WhatsApp Pay, Google Pay, and cash. UPI ID: erhashim@yespop',
-  booking: 'Use the booking form on this site or contact us on WhatsApp. We confirm bookings within 1-2 hours.',
-  location: 'We are located in Sahipora, Ganderbal, Jammu & Kashmir. See the map on the contact page.',
-  services: 'We offer: CSC/eKYC, Printing, Custom Phone Covers, Photo Frames, Digital Help, and ID Photos.',
-  default: 'Hi! I can help with prices, hours, payment, booking, location, and services. What would you like to know?'
+  // Greetings
+  hello: 'Hello! 👋 Welcome to Net Gallery HB! How can I assist you today?',
+  hi: 'Hi there! 👋 Thanks for reaching out. What can I help you with?',
+  hey: 'Hey! 😊 Great to see you! What do you need help with?',
+  greetings: 'Welcome to Net Gallery HB! 🎉 We\'re here to help. Ask me about our services, prices, hours, or anything else!',
+  
+  // Services
+  services: '🎯 Our Services:\n✨ CSC/eKYC Services\n🖨️ Professional Printing (Color & B&W)\n📱 Custom Phone Covers\n🖼️ Photo Frames & Wall Art\n💻 Digital Help & Online Forms\n📷 Passport & ID Photos\n\nWhich service interests you?',
+  printing: '🖨️ Printing Services:\n• A4/A3 Color Printing - ₹5-10/page\n• Black & White - ₹2-5/page\n• Document Binding\n• Lamination Available\n• Fast Turnaround Time\n\nWant to book now?',
+  covers: '📱 Custom Phone Covers:\n• All Mobile Models Supported\n• Premium Quality Material\n• Vibrant HD Printing\n• Price: ₹299/cover\n• Quick Delivery\n\nLet\'s create yours!',
+  frames: '🖼️ Photo Frames:\n• Small Frames - ₹199\n• Large Frames - ₹399\n• Fully Customizable Design\n• Premium Material\n• Perfect Gift Option\n\nInterested?',
+  csc: '🏛️ Government Services:\n• PM-SYM Scheme Registration\n• Bank Account Opening (eKYC)\n• Aadhaar Services\n• Voter ID & Driving License\n• PAN & ABHA Cards\n• All Documentation Handled\n\nNeed help with any of these?',
+  
+  // Pricing
+  price: '💰 Our Pricing:\n📱 Custom Phone Cover - ₹299\n🖼️ Photo Frame (S) - ₹199 | (L) - ₹399\n🖨️ Document Print - ₹10/page (A4)\n📷 Passport Photos (4 pcs) - ₹149\n📞 CSC Services - Variable\n\nBulk orders get special discounts!',
+  cost: '💰 Cost Details:\n• Printing starts from ₹2/page\n• Custom covers at ₹299\n• Frames from ₹199\n• Competitive rates guaranteed\n\nAsk for bulk pricing!',
+  discount: '🎁 Special Offers:\n• Bulk Printing - 20% off\n• Combo Packages Available\n• Referral Rewards Program\n• First-time Customer Discount\n\nContact us for current deals!',
+  
+  // Booking & Hours
+  booking: '📅 Booking Process:\n1. Fill the form on our website\n2. Or contact us via WhatsApp\n3. Confirm your service & timeline\n4. We deliver within promised time\n\nReady to book?',
+  appointment: '📆 To Schedule:\n• Use our online booking form\n• Message us on WhatsApp: +91 80824 22129\n• We respond within 30 minutes\n• Confirmation within 1-2 hours\n\nLet\'s set it up!',
+  hours: '⏰ Operating Hours:\n📅 Monday - Saturday: 10:00 AM - 7:00 PM\n📅 Sunday: CLOSED\n\n⚠️ We\'re open now! Drop by or message us!',
+  timing: '⏱️ Our Timings:\n• Monday-Saturday: 10 AM - 7 PM\n• Sunday: Holiday (Closed)\n• Quick turnaround on most jobs\n• Express service available\n\nWhat do you need?',
+  
+  // Location & Contact
+  location: '📍 Our Location:\n🏪 Net Gallery HB\n📮 Sahipora, Ganderbal\n🗺️ Jammu & Kashmir, 191201\n\nView on map or get directions!',
+  address: '📍 Find Us:\nNet Gallery HB\nSahipora\nGanderbal District\nJ&K 191201\n\nUse our map link for directions!',
+  contact: '📞 Contact Us:\n☎️ Phone: +91 80824 22129\n💬 WhatsApp: +91 80824 22129\n📧 Channel: Join our WhatsApp channel\n💰 UPI: erhashim@yespop\n\nWhich channel would you prefer?',
+  phone: '☎️ Call us at: +91 80824 22129\n(Monday-Saturday, 10 AM - 7 PM)',
+  whatsapp: '💬 Chat on WhatsApp:\n+91 80824 22129\n(Instant replies available!)\n\nOr join our WhatsApp Channel for updates!',
+  
+  // Payment
+  payment: '💳 Payment Methods:\n✅ UPI (erhashim@yespop)\n✅ WhatsApp Pay\n✅ Google Pay\n✅ PhonePe\n✅ Cash Payment\n\nWhich method works for you?',
+  upi: '💳 UPI Payment:\n📱 UPI ID: erhashim@yespop\n✨ Instant & Secure\n📲 Works with all UPI apps\n\nClick "Pay via UPI" button!',
+  
+  // Special Requests
+  custom: '🎨 Custom Orders:\n• Custom Designs Accepted\n• Special Sizes Available\n• Bulk Orders Welcome\n• Corporate Packages\n\nTell us your requirements!',
+  bulk: '📦 Bulk Orders:\n• 20-50 items: 15% off\n• 50-100 items: 20% off\n• 100+ items: 25% off\n• Free delivery on bulk\n\nHow many items?',
+  quality: '⭐ Our Quality:\n✨ Premium Materials Used\n✨ HD Printing Technology\n✨ Professional Team\n✨ 100% Satisfaction Guaranteed\n✨ 5-Star Google Rated\n\nYour satisfaction is our priority!',
+  
+  // About
+  about: '🏢 About Net Gallery HB:\n👨‍💼 Trusted Service Provider\n📍 Located in Sahipora, Ganderbal\n🎯 Serving community since years\n💼 Professional & Reliable\n⭐ Highly Rated by Customers\n\nWe\'re here to help!',
+  company: '🏪 Net Gallery HB:\n✅ Licensed CSC Operator\n✅ Professional Services\n✅ Quick Turnaround\n✅ Best Prices Guaranteed\n✅ Customer Satisfaction First\n\nYour trust is our priority!',
+  
+  // Help & Support
+  help: '🆘 How Can I Help?\n📱 Services - Our offerings\n💰 Price - Pricing details\n⏰ Hours - Operating hours\n📍 Location - Where to find us\n📞 Contact - How to reach us\n📅 Booking - How to book\n💳 Payment - Payment methods\n🎨 Custom - Custom orders\n\nAsk anything!',
+  options: '📋 Available Commands:\nTry: "services", "pricing", "hours", "location", "contact", "booking", "payment", "custom", "help"\n\nOr just ask naturally - I understand!',
+  
+  // Feedback
+  feedback: '⭐ We\'d love your feedback!\nShare your experience with us.\nYour reviews help us improve!\n\n📍 Visit us on Google Maps\n📱 Follow us on Instagram\n📺 Subscribe on YouTube\n\nThank you! 😊',
+  review: '⭐ Customer Reviews:\n✨ 5-Star Google Ratings\n💬 See what others say about us\n📸 Follow our work on Instagram\n\nWant to share your experience?',
+  
+  // Fun & Casual
+  thanks: 'Thank you for choosing us! 🙏 We appreciate your trust and support!',
+  thankyou: 'You\'re welcome! 😊 Happy to help! Feel free to reach out anytime!',
+  welcome: '🎉 Welcome to Net Gallery HB! We\'re excited to serve you!',
+  awesome: '😎 That\'s awesome! We\'re here to make it even better!',
+  
+  // Default
+  default: '👋 Hi! I\'m here to help!\n\nTry asking about:\n📱 Services | 💰 Pricing | ⏰ Hours | 📍 Location | 📞 Contact | 📅 Booking | 💳 Payment\n\nOr just chat naturally!'
 };
 
 function getBotResponse(message) {
-  const msg = message.toLowerCase();
+  const msg = message.toLowerCase().trim();
   
-  if (msg.includes('price') || msg.includes('cost')) return chatResponses.price;
-  if (msg.includes('hour') || msg.includes('time')) return chatResponses.hours;
-  if (msg.includes('pay') || msg.includes('upi')) return chatResponses.payment;
-  if (msg.includes('book')) return chatResponses.booking;
-  if (msg.includes('location') || msg.includes('where')) return chatResponses.location;
+  // Greetings
+  if (msg === 'hi' || msg === 'hello' || msg === 'hey' || msg.match(/^(hi|hello|hey)[\s!.?]*$/)) return chatResponses.hello;
+  if (msg.includes('greet') || msg === 'wassup') return chatResponses.greetings;
+  
+  // Services
   if (msg.includes('service')) return chatResponses.services;
+  if (msg.includes('print')) return chatResponses.printing;
+  if (msg.includes('cover') || msg.includes('phone cover')) return chatResponses.covers;
+  if (msg.includes('frame') || msg.includes('photo frame')) return chatResponses.frames;
+  if (msg.includes('csc') || msg.includes('govt') || msg.includes('government') || msg.includes('ekyc')) return chatResponses.csc;
+  
+  // Pricing
+  if (msg.includes('price') || msg.includes('cost') || msg.includes('₹')) return chatResponses.price;
+  if (msg.includes('discount') || msg.includes('offer') || msg.includes('deal')) return chatResponses.discount;
+  
+  // Booking & Hours
+  if (msg.includes('book') || msg.includes('appointment') || msg.includes('reserve')) return chatResponses.booking;
+  if (msg.includes('hour') || msg.includes('time') || msg.includes('open') || msg.includes('close')) return chatResponses.hours;
+  if (msg.includes('timing')) return chatResponses.timing;
+  
+  // Location & Contact
+  if (msg.includes('location') || msg.includes('where') || msg.includes('address')) return chatResponses.location;
+  if (msg.includes('contact') || msg.includes('reach') || msg.includes('call') || msg.includes('phone')) return chatResponses.contact;
+  if (msg.includes('whatsapp') || msg.includes('wa')) return chatResponses.whatsapp;
+  
+  // Payment
+  if (msg.includes('pay') || msg.includes('payment') || msg.includes('upi')) return chatResponses.payment;
+  
+  // Special
+  if (msg.includes('custom') || msg.includes('personalize')) return chatResponses.custom;
+  if (msg.includes('bulk') || msg.includes('wholesale')) return chatResponses.bulk;
+  if (msg.includes('quality') || msg.includes('guarantee')) return chatResponses.quality;
+  
+  // About
+  if (msg.includes('about') || msg.includes('who are you')) return chatResponses.about;
+  if (msg.includes('company') || msg.includes('business')) return chatResponses.company;
+  
+  // Help
+  if (msg.includes('help') || msg.includes('support') || msg === '?' || msg.includes('options') || msg.includes('commands')) return chatResponses.help;
+  
+  // Feedback
+  if (msg.includes('feedback') || msg.includes('review') || msg.includes('rating')) return chatResponses.feedback;
+  
+  // Fun
+  if (msg.includes('thank') || msg === 'thanks') return chatResponses.thanks;
+  if (msg.includes('welcome')) return chatResponses.welcome;
+  if (msg.includes('awesome') || msg.includes('great') || msg.includes('cool')) return chatResponses.awesome;
   
   return chatResponses.default;
 }
