@@ -760,6 +760,45 @@
       <small class="upi-note">Tip: After payment, send a screenshot to our WhatsApp for confirmation.</small>
     </div>
   </div>
+
+  <!-- Advanced Chatbot Widget -->
+  <div id="chatbotContainer" class="chatbot-container">
+    <div id="chatbotToggle" class="chatbot-toggle" title="Open Chat">
+      <img src="assets/icons/chatbot_icon.png" alt="Chat">
+      <span class="chat-badge">1</span>
+    </div>
+    
+    <div id="chatbotWindow" class="chatbot-window hidden">
+      <div class="chatbot-header">
+        <h3>Net Gallery HB</h3>
+        <p>We typically reply within minutes</p>
+        <button id="minimizeChat" class="chatbot-minimize" aria-label="Minimize">−</button>
+        <button id="closeChat" class="chatbot-close" aria-label="Close">✕</button>
+      </div>
+      
+      <div id="chatMessages" class="chatbot-messages">
+        <div class="chat-message bot-message">
+          <p>👋 Hello! Welcome to Net Gallery HB. How can we help you today?</p>
+          <small>Today at 10:30 AM</small>
+        </div>
+      </div>
+      
+      <div class="chatbot-input-area">
+        <div class="quick-replies" id="quickReplies">
+          <button class="quick-reply" data-message="I need printing services">🖨️ Printing</button>
+          <button class="quick-reply" data-message="Tell me about phone covers">📱 Phone Covers</button>
+          <button class="quick-reply" data-message="Government services">🏛️ Govt Services</button>
+          <button class="quick-reply" data-message="Booking details">📅 Booking</button>
+        </div>
+        
+        <div class="chatbot-input-wrapper">
+          <input type="text" id="chatInput" class="chatbot-input" placeholder="Type your message..." />
+          <button id="sendChat" class="send-btn" aria-label="Send">📤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
