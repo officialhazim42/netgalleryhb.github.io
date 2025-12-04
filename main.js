@@ -120,7 +120,7 @@ const translations = {
     'services.frames':'Photo Frames','services.frames.desc':'Customizable photo frames, gift frames, and decorative wall art.',
     'services.digital':'Digital Help','services.digital.desc':'Online registrations, form filling, tech support, and digital assistance.',
     'services.id':'ID Photos','services.id.desc':'Instant passport-size photos with professional editing and printing.',
-    'pricing.title':'Pricing','pricing.subtitle':'Transparent and competitive pricing','pricing.cover':'Custom Phone Cover','pricing.frame':'Photo Frame (Small)','pricing.print':'Document Printing (A4)','pricing.passport':'Passport Photos (4 pcs)',
+    'pricing.title':'Pricing','pricing.subtitle':'Transparent and competitive pricing','pricing.cover':'Custom Phone Cover','pricing.frame':'Photo Frame (Small)','pricing.print':'Document Printing (A4)','pricing.passport':'Passport Photos (12 pcs)',
     'booking.title':'Book Our Services','booking.subtitle':'Request a booking and we\'ll contact you shortly','booking.name.label':'Full Name *','booking.name.placeholder':'Your full name','booking.phone.label':'Phone Number *','booking.phone.placeholder':'Your phone number','booking.service.label':'Service Required *','booking.service.select':'Select a service','booking.notes.label':'Additional Notes','booking.notes.placeholder':'Tell us more about your requirements','booking.submit':'Submit Booking Request',
     'reviews.title':'Customer Reviews','reviews.subtitle':'What our customers say about us',
     'review.1.text':'"Great service and fast printing. Highly recommended. Will definitely come back."','review.1.author':'Ali Ahmed','review.1.tag':'Verified Customer',
@@ -422,7 +422,7 @@ const chatResponses = {
   csc: '🏛️ Government Services:\n• PM-SYM Scheme Registration\n• Bank Account Opening (eKYC)\n• Aadhaar Services\n• Voter ID & Driving License\n• PAN & ABHA Cards\n• All Documentation Handled\n\nNeed help with any of these?',
   
   // Pricing
-  price: '💰 Our Pricing:\n📱 Custom Phone Cover - ₹299\n🖼️ Photo Frame (S) - ₹199 | (L) - ₹399\n🖨️ Document Print - ₹10/page (A4)\n📷 Passport Photos (4 pcs) - ₹149\n📞 CSC Services - Variable\n\nBulk orders get special discounts!',
+  price: '💰 Our Pricing:\n📱 Custom Phone Cover - ₹299\n🖼️ Photo Frame (S) - ₹199 | (L) - ₹399\n🖨️ Document Print - ₹10/page (A4)\n📷 Passport Photos (12 pcs) - ₹60\n📞 CSC Services - Variable\n\nBulk orders get special discounts!',
   cost: '💰 Cost Details:\n• Printing starts from ₹2/page\n• Custom covers at ₹299\n• Frames from ₹199\n• Competitive rates guaranteed\n\nAsk for bulk pricing!',
   discount: '🎁 Special Offers:\n• Bulk Printing - 20% off\n• Combo Packages Available\n• Referral Rewards Program\n• First-time Customer Discount\n\nContact us for current deals!',
   
