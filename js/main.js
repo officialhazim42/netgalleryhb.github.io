@@ -334,7 +334,7 @@ if (bookingForm) {
   
   try {
     // Try email first
-    const mailtoLink = `mailto:netgalleryhb@example.com?subject=Booking Request from ${name}&body=Name: ${name}%0APhone: ${phone}%0AService: ${service}%0ANotes: ${notes}`;
+    const mailtoLink = `mailto:netgalleryhb@gmail.com?subject=Booking Request from ${name}&body=Name: ${name}%0APhone: ${phone}%0AService: ${service}%0ANotes: ${notes}`;
     window.location.href = mailtoLink;
     
     bookingResult.textContent = 'Email client opened. Your booking request is being processed.';
