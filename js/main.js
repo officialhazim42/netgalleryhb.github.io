@@ -504,7 +504,85 @@ function addChatMessage(text, sender) {
   if (!chatMessages) return;
   const messageDiv = document.createElement('div');
   messageDiv.className = `chat-message ${sender}`;
-  messageDiv.textContent = text;
+
+  // Message content
+  const p = document.createElement('p');
+  p.textContent = text;
+  messageDiv.appendChild(p);
+
+  // If bot mentions payment/UPI, add action buttons
+  try {
+    const lowered = String(text).toLowerCase();
+    const mentionsPayment = /upi|pay|payment|upi id/.test(lowered);
+    if (!chatMessages) return;
+
+    if (sender === 'bot' && mentionsPayment) {
+      const actions = document.createElement('div');
+      actions.className = 'chat-actions';
+
+      // Pay via UPI button
+      const payBtn = document.createElement('button');
+      payBtn.className = 'btn chat-pay-btn';
+      payBtn.type = 'button';
+      payBtn.textContent = 'Pay via UPI';
+      payBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Prefer modal if available
+        try {
+          if (typeof openUpiModal === 'function') {
+            openUpiModal();
+            return;
+          }
+        } catch (err) {
+          // ignore
+        }
+        // Fallback: open UPI deep link or show copy
+        try {
+          if (typeof upiDeepLink !== 'undefined' && upiDeepLink && upiDeepLink.href) {
+            window.open(upiDeepLink.href, '_blank');
+            return;
+          }
+        } catch (err) {}
+        // Final fallback: open UPI intent via URL
+        const upiUrl = `upi://pay?pa=${encodeURIComponent('erhashim@yespop')}&pn=NetGalleryHb&cu=INR`;
+        try { window.open(upiUrl, '_self'); } catch(e) { /* ignore */ }
+      });
+
+      // Copy UPI button
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'btn chat-copy-btn';
+      copyBtn.type = 'button';
+      copyBtn.textContent = 'Copy UPI ID';
+      copyBtn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText('erhashim@yespop');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(()=> copyBtn.textContent = 'Copy UPI ID', 1500);
+          } else {
+            const tmp = document.createElement('input');
+            document.body.appendChild(tmp);
+            tmp.value = 'erhashim@yespop';
+            tmp.select();
+            document.execCommand('copy');
+            document.body.removeChild(tmp);
+            copyBtn.textContent = 'Copied!';
+            setTimeout(()=> copyBtn.textContent = 'Copy UPI ID', 1500);
+          }
+        } catch (err) {
+          console.warn('Copy failed', err);
+        }
+      });
+
+      actions.appendChild(payBtn);
+      actions.appendChild(copyBtn);
+      messageDiv.appendChild(actions);
+    }
+  } catch (err) {
+    console.warn('chat action render error', err);
+  }
+
   chatMessages.appendChild(messageDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
