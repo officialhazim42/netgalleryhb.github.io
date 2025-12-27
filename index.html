@@ -75,6 +75,35 @@
                               }
                                 });
                                 </script>
+
+                                <div class="lightbox" id="lightbox">
+                                    <span id="closeLightbox">&times;</span>
+                                      <img id="lightboxImage" src="">
+                                      </div>
+
+                                      <script>
+                                          const images = document.querySelectorAll(".lightbox-img");
+                                            const lightbox = document.getElementById("lightbox");
+                                              const lightboxImage = document.getElementById("lightboxImage");
+                                                const closeBtn = document.getElementById("closeLightbox");
+
+                                                  images.forEach(img => {
+                                                      img.addEventListener("click", () => {
+                                                            lightboxImage.src = img.src;
+                                                                  lightbox.style.display = "flex";
+                                                                      });
+                                                                        });
+
+                                                                          closeBtn.addEventListener("click", () => {
+                                                                              lightbox.style.display = "none";
+                                                                                });
+
+                                                                                  lightbox.addEventListener("click", (e) => {
+                                                                                      if (e.target !== lightboxImage) {
+                                                                                            lightbox.style.display = "none";
+                                                                                                }
+                                                                                                  });
+                                                                                                  </script>
 <body>
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -102,7 +131,7 @@
     <div class="navbar-container">
       <div class="navbar-brand">
         <a href="#" class="brand-link">
-          <img src="assets/logo.png" alt="Net Gallery Hb" class="brand-logo-img" />
+          <img src="assets/logo.png" class="lightbox-img" alt="Net Gallery Hb" class="brand-logo-img" />
           <div>
             <h2 class="brand-name">Net Gallery Hb</h2>
             <p class="brand-location">Sahipora, Ganderbal</p>
@@ -201,7 +230,7 @@
         <p class="section-subtitle" data-i18n="services.subtitle">Complete digital and printing solutions tailored to your needs</p>
         <div class="services-grid">
           <div class="service-card">
-            <img src="assets/services/pm_sym_scheme.jpg" alt="PM-SYM Scheme" class="service-image">
+            <img src="assets/services/pm_sym_scheme.jpg" class="lightbox-img"alt="PM-SYM Scheme" class="service-image">
             <h3>Pradhan Mantri Shram Yogi Maandhan (PM-SYM) Yojana</h3>
             <p>The Pradhan Mantri Shram Yogi Maandhan (PM-SYM) Yojana is a government-backed pension scheme designed for unorganized sector workers in India.</p>
             <div class="service-details">
@@ -222,7 +251,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/bank_account.jpg" alt="Bank Account Opening" class="service-image">
+            <img src="assets/services/bank_account.jpg" class="lightbox-img"alt="Bank Account Opening" class="service-image">
             <h3>Online Bank Account Opening</h3>
             <p>Open bank accounts with leading banks including Canara Bank, Jammu & Kashmir Bank, Axis Bank, HDFC Bank, PNB and more.</p>
             <div class="service-details">
@@ -244,7 +273,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/govt_services.jpg" alt="Government Services" class="service-image">
+            <img src="assets/services/govt_services.jpg" class="lightbox-img"alt="Government Services" class="service-image">
             <h3>Government Services</h3>
             <p>Access to a wide range of government services including healthcare, education, social welfare, and infrastructure development.</p>
             <div class="service-details">
@@ -265,7 +294,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/voter_id.jpg" alt="Voter ID Card" class="service-image">
+            <img src="assets/services/voter_id.jpg" class="lightbox-img"alt="Voter ID Card" class="service-image">
             <h3>Voter ID Card (EPIC - Elector's Photo Identity Card)</h3>
             <p>Official document issued by the Election Commission of India to eligible voters serving as proof of identity and voting eligibility.</p>
             <div class="service-details">
@@ -286,7 +315,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/driving_licence.jpg" alt="Driving Licence" class="service-image">
+            <img src="assets/services/driving_licence.jpg" class="lightbox-img"alt="Driving Licence" class="service-image">
             <h3>Driving Licence</h3>
             <p>Official driving license issued by Road Transport Offices (RTOs) - mandatory for vehicle operation and valid across the country.</p>
             <div class="service-details">
@@ -307,7 +336,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/pan_card.jpg" alt="PAN Card" class="service-image">
+            <img src="assets/services/pan_card.jpg" class="lightbox-img" alt="PAN Card" class="service-image">
             <h3>PAN Card (Permanent Account Number)</h3>
             <p>Unique 10-character alphanumeric identifier issued by the Income Tax Department for financial transactions and tax purposes.</p>
             <div class="service-details">
@@ -328,7 +357,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/abha_card.jpg" alt="ABHA Card" class="service-image">
+            <img src="assets/services/abha_card.jpg" class="lightbox-img" alt="ABHA Card" class="service-image">
             <h3>ABHA Card (Ayushman Bharat Health Account)</h3>
             <p>Personal health savings account under Ayushman Bharat initiative providing financial protection for medical expenses.</p>
             <div class="service-details">
@@ -349,7 +378,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/apaar.jpg" alt="APAAR" class="service-image">
+            <img src="assets/services/apaar.jpg" class="lightbox-img" alt="APAAR" class="service-image">
             <h3>APAAR (Automated Permanent Academic Account Registry)</h3>
             <p>Enable a smooth digital academic journey through APAAR, seamlessly incorporating skills and experience into a credit-based system.</p>
             <div class="service-details">
@@ -371,7 +400,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/govt_services.jpg" alt="Golden Card" class="service-image">
+            <img src="assets/services/govt_services.jpg" class="lightbox-img"alt="Golden Card" class="service-image">
             <h3>Golden Card</h3>
             <p>Specialized card scheme offering enhanced benefits tailored to your needs - whether for healthcare, residency, or premium services.</p>
             <div class="service-details">
@@ -392,7 +421,7 @@
           </div>
 
           <div class="service-card">
-            <img src="assets/services/eshram_card.jpg" alt="E-Shram Card" class="service-image">
+            <img src="assets/services/eshram_card.jpg" class="lightbox-img"alt="E-Shram Card" class="service-image">
             <h3>E-Shram Card</h3>
             <p>Government of India initiative providing social security benefits to unorganized sector workers through digital registration.</p>
             <div class="service-details">
@@ -485,12 +514,12 @@
         <h2>Our Work</h2>
         <p class="section-subtitle">See what we create for our valued customers</p>
         <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1545259742-2c5b4c4b6f4a?q=80&w=400&auto=format&fit=crop" alt="Professional workspace" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=400&auto=format&fit=crop" alt="Printing services" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=400&auto=format&fit=crop" alt="Custom phone covers" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1526178611114-8a1a6f7b1f42?q=80&w=400&auto=format&fit=crop" alt="Photo frames" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1543353071-087092ec3930?q=80&w=400&auto=format&fit=crop" alt="Customer service" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1581091012184-7c0c0e3c0d5a?q=80&w=400&auto=format&fit=crop" alt="Digital documentation" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1545259742-2c5b4c4b6f4a?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Professional workspace" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Printing services" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Custom phone covers" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1526178611114-8a1a6f7b1f42?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Photo frames" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1543353071-087092ec3930?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Customer service" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1581091012184-7c0c0e3c0d5a?q=80&w=400&auto=format&fit=crop" class="lightbox-img" alt="Digital documentation" loading="lazy">
         </div>
       </section>
 
