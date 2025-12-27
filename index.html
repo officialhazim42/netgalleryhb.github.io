@@ -64,6 +64,17 @@
   }
   </script>
 </head>
+<script>
+    const nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+                nav.classList.add("scrolled");
+                    } else {
+                          nav.classList.remove("scrolled");
+                              }
+                                });
+                                </script>
 <body>
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
