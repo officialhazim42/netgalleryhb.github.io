@@ -1932,6 +1932,15 @@ body.light-mode .footer-bottom {
    MAP VIEW SECTION
    ============================================ */
 
+   #google-reviews {
+      max-width: 1100px;
+        margin: auto;
+        }
+        #google-reviews h2 {
+          font-weight: 600;
+            letter-spacing: 0.5px;
+            }
+
 .map-view {
   background: linear-gradient(180deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
 }
